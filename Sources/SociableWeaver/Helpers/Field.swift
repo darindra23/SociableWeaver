@@ -16,17 +16,17 @@ public struct Field: Directive {
 
     public init(_ type: Any.Type) {
         self.name = String(describing: type)
-        self.nameRepresentable = String(describing: type).convert(with: .camelCase)
+        self.nameRepresentable = String(describing: type)
     }
 
     public init(_ key: CodingKey) {
         self.name = key.stringValue
-        self.nameRepresentable = key.stringValue.convert(with: .camelCase)
+        self.nameRepresentable = key.stringValue
     }
     
     public init(_ string: String) {
         self.name = string
-        self.nameRepresentable = string.convert(with: .camelCase)
+        self.nameRepresentable = string
     }
 }
 
