@@ -25,19 +25,19 @@ public struct Object: Directive {
 
     private init(_ type: Any.Type, fieldAggregates: String) {
         self.name = String(describing: type)
-        self.nameRepresentable = String(describing: type).convert(with: .camelCase)
+        self.nameRepresentable = String(describing: type)
         self.fieldAggregates = fieldAggregates
     }
     
     private init(_ key: String, fieldAggregates: String) {
         self.name = key
-        self.nameRepresentable = key.convert(with: .camelCase)
+        self.nameRepresentable = key
         self.fieldAggregates = fieldAggregates
     }
 
     private init(_ key: CodingKey, fieldAggregates: String) {
         self.name = key.stringValue
-        self.nameRepresentable = key.stringValue.convert(with: .camelCase)
+        self.nameRepresentable = key.stringValue
         self.fieldAggregates = fieldAggregates
     }
     
